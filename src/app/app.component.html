@@ -1,0 +1,10 @@
+<label>New discount rate: <input [(ngModel)]="discount"/></label>
+
+<p>Discount: {{discount | percent}}</p>
+
+<h1>Summer catalogue</h1>
+<ul>
+  @for (item of catalogue; track item.type) {
+    <li>{{item.type}} {{item.price | discounted:discount | currency }}</li>
+  }
+</ul>
